@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/task
+	http://www.springframework.org/schema/task/spring-task.xsd">
+
+	<!-- DBCP数据源配置 -->
+	<bean id="mydatasource" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="url" value="${jdbc.mydemo.url}" />
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="username" value="${jdbc.mydemo.username}" />
+		<property name="password" value="${jdbc.mydemo.password}" />
+
+		<!-- 超过即回收，默认值：8 -->
+		<property name="maxIdle" value="20" />
+		<!-- minIdle要与timeBetweenEvictionRunsMillis配合使用才有用,单独使用minIdle不会起作用.默认值：0 -->
+		<property name="minIdle" value="5" />
+		<property name="initialSize" value="5" />
+
+		<!-- 申请连接时执行validationQuery检测连接是否有效，配置为true会降低性能 -->
+		<property name="testOnBorrow" value="false" />
+		<!-- 归还连接时执行validationQuery检测连接是否有效，配置为true会降低性能 -->
+		<property name="testOnReturn" value="false" />
+		<!-- 建议配置为true，不影响性能，并且保证安全性。申请连接的时候检测，如果空闲时间大于 timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。 -->
+		<property name="testWhileIdle" value="true" />
+		<!-- 每60秒运行一次空闲连接回收器 -->
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<!-- 用来检测连接是否有效的sql，要求是一个查询语句,如果validationQuery为 null，testOnBorrow、testOnReturn、testWhileIdle都不起其作用。 -->
+		<property name="validationQuery" value="select user()" />
+	</bean>
+
+	<!-- 定义受环境影响易变的变量 -->
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		<property name="ignoreResourceNotFound" value="false" />
+		<property name="locations">
+			<list>
+				<value>classpath*:/config.properties</value>
+			</list>
+		</property>
+	</bean>
+	<!-- mybatis配置 -->
+	<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="mydatasource" />
+		<property name="configLocation" value="classpath:mybatis.xml" />
+		<property name="mapperLocations" value="classpath*:sqlmap/**/*.xml" />
+		<property name="plugins">
+			<bean class="com.changhf.plugin.page.PaginationInterceptor">
+				<property name="properties">
+					<props>
+						<prop key="dialect">${jdbc.type}</prop>
+					</props>
+				</property>
+			</bean>
+		</property>
+	</bean>
+	<!-- spring与mybatis整合配置，扫描所有dao ,生成与DAO类相同名字的bean（除了首字母小写） -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.changhf.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sessionFactory" />
+	</bean>
+
+	<!-- 事务管理器配置,多数据源事务 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="mydatasource" />
+	</bean>
+
+	<!-- 任务扫描注解,打开定时器开关 -->
+	<task:annotation-driven executor="executor" scheduler="scheduler" />
+	<task:executor id="executor" pool-size="30" />
+	<task:scheduler id="scheduler" pool-size="30" /><!-- 推荐配置线程池，若不配置多任务下会有问题。 -->
+
+	<!-- 获取spring上下文工具 -->
+	<!-- <bean id="springContextUtils" class="com.cmcc.hygieia.util.SpringContextUtils" 
+		lazy-init="false"/> -->
+
+ 	<!-- 使用annotation定义事务 -->
+    <!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
+	<!--全局异常处理 -->
+	<!-- <bean id="globalExceptionResolver" class="com.cmcc.komectweb.interceptor.GlobalExceptionResolver" 
+		/> -->
+	<import resource="classpath:spring/spring-redis.xml" />
+
+
+
+</beans> 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.changhf.dao.coupon.CouponDao">
+ 	<sql id="Base_Column_List">
+ 		id,
+		group_id as groupId,
+		user_id as userId,
+		coupon_code as couponCode,
+		coupon_type as couponType,
+		start_time as startTime,
+		end_time as endTime,
+		is_used as isUsed,
+		product_type as productType,
+		price as price,
+		sub_price as subPrice,
+		number as number,
+		status as status,
+		operator as operator,
+		modify_time as modifyTime
+ 	</sql>
+	<select id="getCouponCodeByGroupId" resultType="map">
+		select
+			<include refid="Base_Column_List"/>
+	    from t_user_coupon
+	    where group_id=#{groupId}
+	</select>
+
+</mapper>

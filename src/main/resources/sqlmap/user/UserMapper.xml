@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.changhf.dao.UserDao">
+	<resultMap id="BaseResultMap" type="com.changhf.domain.User">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="user_name" property="userName" jdbcType="VARCHAR" />
+		<result column="mobile" property="mobile" jdbcType="VARCHAR" />
+		<result column="salt" property="salt" jdbcType="VARCHAR" />
+		<result column="add_time" property="addTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<sql id="fieldAsProperty">
+		id,
+		user_name,
+		password,
+		salt,
+		mobile,
+		add_time
+	</sql>
+	<select id="getUserById" resultMap="BaseResultMap">
+		select <include refid="fieldAsProperty"/> from c_user where id = #{id}
+	</select>
+	
+	<select id="countUser" resultType="java.lang.Integer">
+		select count(1) from c_user
+	</select>
+	<select id="listUser" resultType="com.changhf.domain.User">
+		select <include refid="fieldAsProperty"/>
+		from c_user order by add_time desc
+	</select>
+	<select id="findUserByMobile" resultMap="BaseResultMap">
+		select <include refid="fieldAsProperty"/> from c_user where mobile = #{mobile}
+	</select>
+	<insert id="addUser" parameterType="com.changhf.domain.User">
+		insert into c_user
+		(user_name,mobile,password,salt,add_time) values(
+		#{userName},#{mobile},#{password},#{salt},#{addTime})
+	</insert>
+	<insert id="updateUser" parameterType="java.util.Map">
+		update c_user
+		set
+		password=#{password} where mobile=#{mobile}
+	</insert>
+	<delete id="delUserById">
+		delete from c_user where id=#{id,jdbcType=INTEGER}
+	</delete>
+	
+	<insert id="addUserLoginLog" useGeneratedKeys="true" keyColumn="id" parameterType="com.changhf.domain.UserLoginLog">
+		insert ignore into t_user_login_log (user_id,login_time,login_ip) 
+		values(
+		#{userId,jdbcType=INTEGER},
+		#{loginTime,jdbcType=VARCHAR},
+		#{ip,jdbcType=VARCHAR})
+	</insert>
+</mapper>
