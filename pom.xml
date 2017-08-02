@@ -35,11 +35,11 @@
 			<version>3.1.0</version>
 		</dependency>
 
-		<dependency>
+		<!--<dependency>
 			<groupId>com.getui</groupId>
 			<artifactId>jackson-all</artifactId>
 			<version>1.8.5</version>
-		</dependency>
+		</dependency>-->
 		<dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
