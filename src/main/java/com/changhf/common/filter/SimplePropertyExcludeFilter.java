@@ -14,9 +14,6 @@ import com.alibaba.fastjson.serializer.PropertyPreFilter;
 
 /** 
 * @ClassName: SimplePropertyExcludeFilter 
-* @Description: fastjson exclude 过滤器
-* @author zengbin
-* @date 2015年8月11日 下午5:20:51 
 */
 public class SimplePropertyExcludeFilter implements PropertyPreFilter {
 

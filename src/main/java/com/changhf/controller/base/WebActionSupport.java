@@ -3,6 +3,7 @@ package com.changhf.controller.base;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.changhf.utils.redis.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -20,18 +21,13 @@ import net.sf.json.JSONObject;
  *
  *
  * @File: WebActionSupport.java
- * @Date: 2014年7月25日
- * @Author: 周强
- * @Copyright: 版权所有 (C) 2014 中国移动 杭州研发中心.
- *
- * @注意：本内容仅限于中国移动内部传阅，禁止外泄以及用于其他的商业目的
  */
 
 @SuppressWarnings({ "serial", "unused" })
 public abstract class WebActionSupport {
 
-	// @Autowired
-	// protected RedisService redisService;
+	@Autowired
+	protected RedisService redisService;
 	public static final String RELOAD = "reload";
 	public static final String DEFAULT_RETURN_URL = "index.action";
 	protected Object result;
@@ -96,7 +92,7 @@ public abstract class WebActionSupport {
 
 	/***
 	 * JSONP格式转化
-	 * 
+	 *
 	 * @param p
 	 *            JSON格式字符串：JSONObject,JSONArray callback jsonp参数
 	 * @return

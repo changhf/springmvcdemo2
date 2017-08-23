@@ -12,13 +12,12 @@ public interface UserService {
 	public Map<String, Object> findUserByMobile(String mobile);
 	/**
 	 * 根据id查询用户信息
-	 * @param mobile
+	 * @param id
 	 * @return
 	 */
 	public Map<String, Object> getUserById(Integer id);
 	/**
 	 * 分页查询用户信息
-	 * @param mobile
 	 * @return
 	 */
 	public Map<String, Object> listUser(Integer pageSize,Integer pageOffset);

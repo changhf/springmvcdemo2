@@ -187,7 +187,7 @@ public class RedisService implements CacheService, InitializingBean {
 	 * </pre>
 	 * 
 	 * @param key
-	 * @param obj
+	 * @param key
 	 */
 	@Override
 	public Object getObj(String key) {
@@ -387,7 +387,6 @@ public class RedisService implements CacheService, InitializingBean {
 	 * @param keys
 	 * @return
 	 */
-	@SuppressWarnings("rawtypes")
 	@Override
 	public Map<String, Object> pipeGetMap(String keyName, List<String> keys) {
 		Map<String, Object> contentMap = Maps.newHashMap();
