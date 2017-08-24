@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -11,42 +11,47 @@
 <div class="container">
     <div class="row clearfix">
         <div class="col-md-12 column">
-            <div id="top">
-                <div id="topBar">
-                    <div class="userPanel">
-                        <ul>
-                            <li>
-                                <a rel="nofollow" href="#">手机版</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#">设为首页</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#">加入收藏</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#">联系我们</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="welcome">
-                        欢迎光www.layoutit.cn 可视化布局！
-                    </div>
-                </div>
-
-            </div>
-
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a rel="nofollow" href="#">首页</a>
+                </li>
+                <li>
+                    <a rel="nofollow" href="#">资料</a>
+                </li>
+                <li class="disabled">
+                    <a rel="nofollow" href="#">消息</a>
+                </li>
+                <li class="dropdown pull-right">
+                    <a rel="nofollow" href="#" data-toggle="dropdown" class="dropdown-toggle">下拉菜单<strong class="caret"></strong></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a rel="nofollow" href="#">列表一</a>
+                        </li>
+                        <li>
+                            <a rel="nofollow" href="#">列表二</a>
+                        </li>
+                        <li>
+                            <a rel="nofollow" href="#">列表三</a>
+                        </li>
+                        <li class="divider">
+                        </li>
+                        <li>
+                            <a rel="nofollow" href="#">更多列表</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="row clearfix">
         <div class="col-md-6 column">
         </div>
         <div class="col-md-6 column">
-            <form class="form-horizontal" role="form" action="/springmvcdemo2/user/listUser">
+            <form class="form-horizontal" role="form" action="/springmvcdemo2/login/pwdLogin">
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">用户名：</label>
+                    <label for="inputMobile" class="col-sm-2 control-label">用户名：</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3" name="username"/>
+                        <input type="email" class="form-control" id="inputMobile" name="mobile"/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -58,7 +63,7 @@
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <div class="checkbox">
-                            <label><input type="checkbox" /> 记住我</label>
+                            <label><input type="checkbox"/> 记住我</label>
                         </div>
                     </div>
                 </div>
@@ -68,6 +73,27 @@
                     </div>
                 </div>
             </form>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-4 column">
+        </div>
+        <div class="col-md-4 column">
+            <div id="footer">
+                <div class="footerNav">
+                    <a rel="nofollow" href="http://www.layoutit.cn">关于我们</a> | <a rel="nofollow"
+                                                                                  href="http://www.layoutit.cn">服务条款</a>
+                    | <a rel="nofollow" href="http://www.layoutit.cn">免责声明</a> | <a rel="nofollow"
+                                                                                    href="http://www.layoutit.cn">网站地图</a>
+                    | <a rel="nofollow" href="http://www.layoutit.cn">联系我们</a>
+                </div>
+                <div class="copyRight">
+                    Copyright ©2010-2014layoutit.cn 版权所有
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 column">
         </div>
     </div>
 </div>
