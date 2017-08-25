@@ -23,10 +23,6 @@ public class WebUtils {
     public static String[] WHITELIST = { "app.walking.komect.com", "data.walking.komect.com", "oss.walking.komect.com", "walking.komect.com", "www.hiifit.com", "www.hiifit.net" };
 
 
-    public static Date getCurrentDate() {
-        return new Date(System.currentTimeMillis());
-    }
-
     public static String getCurrentIP(HttpServletRequest request) {
         String result = request.getHeader("X-Real-IP");
         if (result == null || result.length() == 0 || "unknown".equalsIgnoreCase(result)) {

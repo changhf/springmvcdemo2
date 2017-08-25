@@ -8,13 +8,6 @@ import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 
-/**
- * @Date: 2015年12月17日
- * @Author: wwei
- * @Copyright: 版权所有 (C) 2015 中国移动 杭州研发中心.
- * @Description: DES加密/解密
- * @注意：本内容仅限于中国移动内部传阅，禁止外泄以及用于其他的商业目的
- */
 public class DesUtils {
 
     /** 加密算法,可用 DES,DESede,Blowfish. */

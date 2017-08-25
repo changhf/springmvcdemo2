@@ -6,7 +6,7 @@
     <packaging>war</packaging>
     <version>1.0.0-SNAPSHOT</version>
 
-    <name>mydemo</name>
+    <name>springmvcdemo2</name>
     <url>http://maven.apache.org</url>
 
     <properties>

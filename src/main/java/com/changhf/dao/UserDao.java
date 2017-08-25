@@ -18,13 +18,11 @@ public interface UserDao extends IBaseDao<User>{
 	public User getUserById(Integer id);
 	/**
 	 * 分页查询用户列表
-	 * @param id
 	 * @return
 	 */
 	public List<User> listUser(@Param(value="page") Page<?> page);
 	/**
 	 * 查询总记录数
-	 * @param page
 	 * @return
 	 */
 	public Integer countUser();
@@ -36,7 +34,6 @@ public interface UserDao extends IBaseDao<User>{
 	public User findUserByMobile(String mobile);
 	/**
 	 * 根据id查询用户
-	 * @param id
 	 * @return
 	 */
 //	public User getUserByMobile(String mobile);
@@ -44,18 +41,14 @@ public interface UserDao extends IBaseDao<User>{
 	public int addUser(User user);
 	/**
 	 * 修改用户信息
-	 * @param paramMap
 	 */
 	public int updateUser(User user);
 	/**
 	 * 删除用户信息
-	 * @param paramMap
 	 */
 	public int delUserById(int id);
 	/**
 	 * 插入用户登录日志
-	 * @param userId
-	 * @param ip
 	 * @return
 	 */
 	public int addUserLoginLog(UserLoginLog log);
