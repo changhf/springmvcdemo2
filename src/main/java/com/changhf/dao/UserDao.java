@@ -9,6 +9,9 @@ import com.changhf.domain.User;
 import com.changhf.domain.UserLoginLog;
 import com.changhf.plugin.page.Page;
 
+/**
+ *
+ */
 public interface UserDao extends IBaseDao<User>{
 	/**
 	 * 根据id查询用户
