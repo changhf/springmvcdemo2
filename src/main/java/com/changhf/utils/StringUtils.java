@@ -1,8 +1,8 @@
 /**
- *@Project: HJK
- *@Author: lizhibing
- *@Date: 2015-04-02
- *@Copyright: 2000-2015 CMCC . All rights reserved.
+ * @Project: HJK
+ * @Author: lizhibing
+ * @Date: 2015-04-02
+ * @Copyright: 2000-2015 CMCC . All rights reserved.
  */
 package com.changhf.utils;
 
@@ -21,7 +21,7 @@ import java.util.regex.Pattern;
 public abstract class StringUtils {
     /**
      * processSqlQueryLike
-     * 
+     *
      * @param string
      * @return
      */
@@ -35,7 +35,7 @@ public abstract class StringUtils {
 
     /**
      * encode
-     * 
+     *
      * @param value
      * @return
      */
@@ -52,7 +52,7 @@ public abstract class StringUtils {
 
     /**
      * decode
-     * 
+     *
      * @param value
      * @return
      */
@@ -69,7 +69,7 @@ public abstract class StringUtils {
 
     /**
      * 判断一个字符串是否包含数字
-     * 
+     *
      * @param content
      *            需要判断的字符串
      * @return
@@ -87,7 +87,7 @@ public abstract class StringUtils {
 
     /**
      * 验证是否为空
-     * 
+     *
      * @param str
      * @return
      */
@@ -95,9 +95,13 @@ public abstract class StringUtils {
         return (str == null || "".equals(str));
     }
 
+    public static boolean isNotEmpty(Object str) {
+        return !isEmpty(str);
+    }
+
     /**
      * 字符串空处理，去除首尾空格 如果str为null，返回"",否则返回str
-     * 
+     *
      * @param str
      * @return
      */
@@ -110,7 +114,7 @@ public abstract class StringUtils {
 
     /**
      * 判断一个密码是否符合规则:密码长度为8~20位，至少包含字母，数字或符号中的两种
-     * 
+     *
      * @param password
      *            需要判断的字符串
      * @return
@@ -124,7 +128,7 @@ public abstract class StringUtils {
 
     /**
      * 判断是否包含中文
-     * 
+     *
      * @param str
      * @return
      */
@@ -136,7 +140,7 @@ public abstract class StringUtils {
 
     /**
      * 判断字符串是否不为整数
-     * 
+     *
      * @param str
      * @return
      */

@@ -20,11 +20,13 @@ public class UserServiceTest extends AbstractTest {
 
     @Test
     public void testFindUserByMobile() {
-        Map<String, Object> userMap = userService.findUserByMobile("15136555611");
-        // if (null == userMap) {
-            // throw new DemoBusinessException("user not exist, [name=%s]", userMap);
-        // }
+        String mobile = "15136555611";
+        Map<String, Object> userMap = userService.findUserByMobile(mobile);
+
         User user = (User) userMap.get("user");
+        if (null == user) {
+            throw new DemoBusinessException("user not exist, [mobile=%s]", mobile);
+        }
         Assert.assertEquals(user.getUserName(), "changhf");
     }
 
