@@ -2,6 +2,7 @@ package com.changhf.common;
 
 import java.util.Map;
 
+import com.changhf.utils.RecodeEnumUtils;
 import com.google.common.collect.Maps;
 /**
  * 请求返回信息
@@ -42,8 +43,8 @@ public class ResponseMessageMap {
      */
     public static Map<String, Object> insertErrorMap() {
         Map<String, Object> rtnMap = Maps.newHashMap();
-        rtnMap.put(Constants.MOBILE_RECODE, RecodeEnum.INSERT_ERROR.getCode());
-        rtnMap.put(Constants.MOBILE_MSG, RecodeEnum.INSERT_ERROR.getMsg());
+        rtnMap.put(Constants.MOBILE_RECODE, RecodeEnumUtils.INSERT_ERROR.getCode());
+        rtnMap.put(Constants.MOBILE_MSG, RecodeEnumUtils.INSERT_ERROR.getMsg());
         return rtnMap;
     }
 }

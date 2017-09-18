@@ -5,25 +5,25 @@
 
     <!-- Appenders -->
     <appender class="org.apache.log4j.ConsoleAppender" name="console">
-        <param name="Encoding" value="UTF-8" />
+        <param name="Encoding" value="UTF-8"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="[%-5p %c{1}] {%x} %m%n"/>
         </layout>
     </appender>
 
     <appender name="mainlog" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="Encoding" value="UTF-8" />
-        <param name="File" value="/home/cxb/logs/mydemo.log" />
-        <param name="DatePattern" value="'-'yyyy-MM-dd" />
+        <param name="Encoding" value="UTF-8"/>
+        <param name="File" value="/home/cxb/logs/mydemo.log"/>
+        <param name="DatePattern" value="'-'yyyy-MM-dd"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%d{yyyy-MM-dd HH\:mm\:ss,SSS} %5p [%t] (%F\:%L) - %m%n"/>
         </layout>
     </appender>
     <!-- 定时器日志 -->
     <appender name="schedulelog" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="Encoding" value="UTF-8" />
-        <param name="File" value="/home/cxb/logs/schedule/mydemoschedule.log" />
-        <param name="DatePattern" value="'-'yyyy-MM-dd" />
+        <param name="Encoding" value="UTF-8"/>
+        <param name="File" value="/home/cxb/logs/schedule/mydemoschedule.log"/>
+        <param name="DatePattern" value="'-'yyyy-MM-dd"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%d{yyyy-MM-dd HH\:mm\:ss,SSS} %5p [%t] (%F\:%L) - %m%n"/>
         </layout>
@@ -55,7 +55,7 @@
 
     <!-- Root Logger -->
     <root>
-        <priority value="ERROR" />
+        <priority value="ERROR"/>
         <appender-ref ref="mainlog"/>
         <appender-ref ref="console"/>
     </root>

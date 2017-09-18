@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 import java.util.Map;
 
 /**
- * @author <a href="mailto:wb-chf309549@alibaba-inc.com">常华锋</a>
  * @version V1.0.0
  * @since 2017/08/28
  */

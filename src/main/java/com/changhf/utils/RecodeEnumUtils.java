@@ -5,6 +5,7 @@ package com.changhf.utils;
  *
  */
 public enum RecodeEnumUtils {
+    INSERT_ERROR(-1, "数据库新增失败"),
     COOKIE_NOT_EXIST(-1, "cookie不存在"),
     SESSION_ID_NULL(-2, "sessionId 为空"),
     NO_LOGIN(-3, "用户未登录");
