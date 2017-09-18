@@ -4,9 +4,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * 
- * @author yinhu
- *
+ * @version V1.0.0
+ * @since 2017/09/14
  */
 public class RegExUtils {
 
@@ -29,7 +28,6 @@ public class RegExUtils {
 
     /**
      * 用户真实名正则表达式
-     * @param userName
      * @return
      */
     public static boolean matUserRealName(String userRealName) {
@@ -63,7 +61,6 @@ public class RegExUtils {
 
     /**
      * 用户名正则表达式
-     * @param userName
      * @return
      */
     public static boolean checkMemberName(String memberName) {
@@ -80,7 +77,6 @@ public class RegExUtils {
 
     /**
      * 用户名正则表达式
-     * @param userName
      * @return
      */
     public static boolean matPassword(String password) {
@@ -98,7 +94,6 @@ public class RegExUtils {
     /**
      * 检验手机号
      * 
-     * @param memberPhone
      * @return
      */
     public static boolean checkPhone(String phone) {
@@ -109,4 +104,15 @@ public class RegExUtils {
         return isMatched;
     }
 
+    public static boolean checkIpAddr(String ipAddr) {
+        ipAddr = StringUtils.operateNull(ipAddr);
+        Pattern regex = Pattern.compile("^\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}$");
+        Matcher matcher = regex.matcher(ipAddr);
+        boolean isMatched = matcher.matches();
+        return isMatched;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(checkMemberName("a5?/="));
+    }
 }

@@ -1,9 +1,3 @@
-/**
- * @Project: HJK
- * @Author: lizhibing
- * @Date: 2015-04-02
- * @Copyright: 2000-2015 CMCC . All rights reserved.
- */
 package com.changhf.utils;
 
 import java.io.UnsupportedEncodingException;
@@ -13,10 +7,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @ClassName: StringUtils
- * @Description:
- * @author lizhibing
- * @date 2015-04-02 20:01
+ * @version V1.0.0
+ * @since 2017/09/14
  */
 public abstract class StringUtils {
     /**
@@ -70,8 +62,7 @@ public abstract class StringUtils {
     /**
      * 判断一个字符串是否包含数字
      *
-     * @param content
-     *            需要判断的字符串
+     * @param content 需要判断的字符串
      * @return
      */
     public static boolean hasDigit(String content) {
@@ -115,8 +106,7 @@ public abstract class StringUtils {
     /**
      * 判断一个密码是否符合规则:密码长度为8~20位，至少包含字母，数字或符号中的两种
      *
-     * @param password
-     *            需要判断的字符串
+     * @param password 需要判断的字符串
      * @return
      */
     public static boolean validatePwdRegex(String password) {
@@ -157,6 +147,7 @@ public abstract class StringUtils {
 
     /**
      * 是否包含指定的字符串
+     *
      * @param str
      * @param searchStr
      * @return

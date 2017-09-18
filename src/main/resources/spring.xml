@@ -76,13 +76,13 @@
     <task:scheduler id="scheduler" pool-size="30"/><!-- 推荐配置线程池，若不配置多任务下会有问题。 -->
 
     <!-- 获取spring上下文工具 -->
-    <!-- <bean id="springContextUtils" class="com.cmcc.hygieia.util.SpringContextUtils"
+    <!-- <bean id="springContextUtils" class="com.changhf.hygieia.util.SpringContextUtils"
         lazy-init="false"/> -->
 
     <!-- 使用annotation定义事务 -->
     <!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
     <!--全局异常处理 -->
-    <!-- <bean id="globalExceptionResolver" class="com.cmcc.komectweb.interceptor.GlobalExceptionResolver"
+    <!-- <bean id="globalExceptionResolver" class="com.changhf.komectweb.interceptor.GlobalExceptionResolver"
         /> -->
     <import resource="classpath:spring/spring-redis.xml"/>
 

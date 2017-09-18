@@ -1,19 +1,13 @@
-/*
- * @Project: GZJK
- * @Author: zengbin
- * @Date: 2015年11月8日
- * @Copyright: 2000-2015 CMCC . All rights reserved.
- */
+
 package com.changhf.utils;
 
 import java.lang.reflect.Field;
 
-/** 
-* @ClassName: ReflectUtil 
-* @Description: 利用反射进行操作的一个工具类
-* @author zengbin
-* @date 2015年11月8日 下午6:50:08 
-*/
+/**
+ * 利用反射进行操作的一个工具类
+ * @version V1.0.0
+ * @since 2017/09/14
+ */
 public class ReflectUtil {
     /**
      * 利用反射获取指定对象的指定属性

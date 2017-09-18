@@ -15,9 +15,9 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * @File: WebUtil.java
+ * @version V1.0.0
+ * @since 2017/09/14
  */
-
 public class WebUtil {
 
     public static void returnJSON(HttpServletResponse response, String jsonData, String dataType) {

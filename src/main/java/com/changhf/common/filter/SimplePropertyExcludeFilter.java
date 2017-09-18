@@ -1,9 +1,3 @@
-/*
-*@Project: GZJK
-*@Author: zengbin
-*@Date: 2015年8月11日
-*@Copyright: 2000-2015 CMCC . All rights reserved.
- */
 package com.changhf.common.filter;
 
 import java.util.HashSet;

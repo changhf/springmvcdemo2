@@ -1,9 +1,3 @@
-/*
- *@Project: GZJK
- *@Author: sen
- *@Date: 2015年6月1日
- *@Copyright: 2000-2015 CMCC . All rights reserved.
- */
 package com.changhf.utils.http;
 
 import java.math.BigDecimal;
@@ -13,9 +7,10 @@ import java.util.Base64.Encoder;
 
 import org.springframework.util.StringUtils;
 
-/** 
-* @ClassName: Base64Util 
-*/
+/**
+ * @version V1.0.0
+ * @since 2017/09/14
+ */
 public class Base64Util {
     /**
      * 解密参数
@@ -73,6 +68,6 @@ public class Base64Util {
     		System.out.println("老版本");
     	}
     	
-    	System.out.println(encode("IMEI=A5AA5ED2-FFDF-431B-925F-3A73FC48FC34|VERSION=2.8.0|SNAME=中国移动|DEVICE=iPhone7,2|OSVE"));
+    	System.out.println(encode("IMEI=A5AA5ED2-FFDF-431B-925F-3A73FC48FC34|VERSION=2.8.0|SNAME=常华锋|DEVICE=iPhone7,2|OSVE"));
     }
 }

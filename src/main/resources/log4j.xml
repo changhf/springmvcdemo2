@@ -32,11 +32,11 @@
     <category additivity="true" name="com.changhf">
         <level value="DEBUG"/>
     </category>
-    <!--<category additivity="false" name="com.cmcc.akso.manager.base.impl.ScheduledManagerImpl">
+    <!--<category additivity="false" name="com.changhf.akso.manager.base.impl.ScheduledManagerImpl">
         <level value="DEBUG"/>
         <appender-ref ref="schedulelog"/>
     </category>
-    <category additivity="true" name="com.cmcc.akso.schedule">
+    <category additivity="true" name="com.changhf.akso.schedule">
         <level value="DEBUG"/>
         <appender-ref ref="schedulelog"/>
     </category>-->

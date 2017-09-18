@@ -19,9 +19,9 @@ public class QuartzJob {
 	// @Scheduled(cron = "0 30 14 * * ?")//每天14:30
     
     /**
-     * 信托到期前5天时发送短信通知到指定用户
+     * 测试
      */
-    @Scheduled(cron = "0 30 10 * * ?")//每天早上10点
+    @Scheduled(cron = "0 30 10 * * ?")//每天早上10点半
     public void printCurrentTime(){
         logger.info("定时器printCurrentTime------------start");
         System.out.println(new Date());

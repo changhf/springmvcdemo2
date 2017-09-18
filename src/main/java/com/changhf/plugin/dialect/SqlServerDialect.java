@@ -3,8 +3,6 @@ package com.changhf.plugin.dialect;
 /**
 * @ClassName: SqlServerDialect 
 * @Description: SqlServer数据库方言实现
-* @author zengbin
-* @date 2015年10月28日 下午2:45:24
  */
 public class SqlServerDialect implements Dialect {
 

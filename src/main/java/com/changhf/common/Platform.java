@@ -1,16 +1,9 @@
-/*
- *@Project: GZJK
- *@Author: bin
- *@Date: 2015年4月20日
- *@Copyright: 2000-2015 CMCC . All rights reserved.
- */
 package com.changhf.common;
 
 /**
- * @ClassName: Platform
  * @Description: 平台枚举
- * @author zengbin
- * @date 2016年11月09日 下午7:11:37
+ * @version V1.0.0
+ * @since 2017/09/14
  */
 public enum Platform {
     NEWCITY_APP("NEWCITY_APP", "新城市手机app"),

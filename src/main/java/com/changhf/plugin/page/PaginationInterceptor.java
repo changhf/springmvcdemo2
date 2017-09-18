@@ -28,8 +28,6 @@ import com.changhf.utils.ReflectUtil;
   * 实现mybatis提供的拦截器接口，编写我们自己的分页实现，原理就是拦截底层JDBC操作相关的Statement对象，
   * 把前端的分页参数如当前记录索引和每页大小通过拦截器注入到sql语句中，即在sql执行之前通过分页参数重新生成分页sql，
   * 而具体的分页sql实现是分离到Dialect接口中去。
-* @author zengbin
-* @date 2015年10月28日 下午2:52:09
  */
 @Intercepts({ @Signature(type = StatementHandler.class, method = "prepare", args = { Connection.class }) })
 public class PaginationInterceptor implements Interceptor {

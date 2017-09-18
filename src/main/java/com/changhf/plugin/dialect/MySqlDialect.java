@@ -3,8 +3,6 @@ package com.changhf.plugin.dialect;
 /***
 * @ClassName: MySqlDialect 
 * @Description: MySql数据库方言实现
-* @author zengbin
-* @date 2015年10月28日 上午11:17:24
  */
 public class MySqlDialect implements Dialect {
 

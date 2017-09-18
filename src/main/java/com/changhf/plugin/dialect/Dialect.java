@@ -3,8 +3,6 @@ package com.changhf.plugin.dialect;
 /**
 * @ClassName: Dialect 
 * @Description: 数据库方言接口
-* @author zengbin
-* @date 2015年10月28日 上午11:05:53
  */
 public interface Dialect {
 

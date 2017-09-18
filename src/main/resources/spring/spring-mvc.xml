@@ -43,7 +43,7 @@
 	<!-- <mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**"/>
-			<bean class="com.cmcc.komectweb.interceptor.LoginInterceptor"/>
+			<bean class="com.changhf.komectweb.interceptor.LoginInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors> -->
 
