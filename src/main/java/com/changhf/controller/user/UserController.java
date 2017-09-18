@@ -83,7 +83,7 @@ public class UserController extends WebActionSupport {
 		String mobile = ParamUtil.getFilteredParameter(request, "mobile", 0, "");
 		// 发送短信验证码
 		Map<String, Object> map = userService.findPassword(mobile);
-		returnJSON(map);
+		returnFastJSON(map);
 	}
 
 	@RequestMapping(value = "resetPassword")

@@ -28,24 +28,23 @@
 	</bean>
 
     <!-- 覆盖默认的转换器，实现自定义转换器 -->
-	<mvc:annotation-driven conversion-service="conversionService" />
-	<!-- 类型转化服务 -->
-	<bean id="conversionService"
-		class="org.springframework.context.support.ConversionServiceFactoryBean">
-		<property name="converters">
-			<set>
-				<bean class="com.changhf.utils.StringToDateConverter" />
-			</set>
-		</property>
-	</bean>
+	<!--<mvc:annotation-driven conversion-service="conversionService" />-->
+	<!--<bean id="conversionService"-->
+		<!--class="org.springframework.context.support.ConversionServiceFactoryBean">-->
+		<!--<property name="converters">-->
+			<!--<set>-->
+				<!--<bean class="com.changhf.utils.StringToDateConverter" />-->
+			<!--</set>-->
+		<!--</property>-->
+	<!--</bean>-->
    
 	<!-- Spring MVC 拦截器 -->
-	<!-- <mvc:interceptors>
+	 <mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**"/>
-			<bean class="com.changhf.komectweb.interceptor.LoginInterceptor"/>
+			<bean class="com.changhf.plugin.interceptor.LoginInterceptor"/>
 		</mvc:interceptor>
-	</mvc:interceptors> -->
+	</mvc:interceptors>
 
 	<!-- 处理静态资源请求，由web应用服务器处理 -->
 	<mvc:default-servlet-handler/>

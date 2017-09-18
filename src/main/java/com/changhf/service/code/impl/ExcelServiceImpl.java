@@ -8,13 +8,14 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
+import com.changhf.utils.DateConverter;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.changhf.common.Constants;
 import com.changhf.common.ResponseMessageMap;
 import com.changhf.service.code.ExcelService;
-import com.changhf.utils.DateUtils;
 import com.changhf.utils.StringUtils;
 
 import jxl.Workbook;
@@ -30,6 +31,8 @@ import jxl.write.WritableWorkbook;
 @Service("excelService")
 public class ExcelServiceImpl implements ExcelService<Map<String, Object>> {
 	private final static Logger logger = Logger.getLogger(ExcelServiceImpl.class);
+	@Autowired
+	private DateConverter dateConverter;
 	@Override
 	public Map<String, Object> exportExcelByJxl(List<Map<String, Object>> listContent, String fileName,
 			Map<String, String> exportMap, Map<String, String> fileTypeMap, HttpServletResponse response) {
@@ -152,8 +155,8 @@ public class ExcelServiceImpl implements ExcelService<Map<String, Object>> {
 	                            if (!StringUtils.isEmpty(value) && null != fileTypeMap && fileTypeMap.size() > 0) {
 	                                String fieldType = fileTypeMap.get(fieldName.toString());
 	                                if (!StringUtils.isEmpty(fieldType) && Constants.EXCEL_TYPE_DATE.equals(fieldType)) {
-	                                    value = DateUtils.dateToStrLong((Date) value);
-	                                }
+										value = dateConverter.format((Date) value);
+									}
 	                            }
 	                            sheet.addCell(new Label(j, i, value.toString(), wcfLeft));
 	                            j++;

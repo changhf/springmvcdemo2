@@ -14,13 +14,12 @@ import com.changhf.common.Platform;
 
 /**
  * WebUtils.java
- * @author liMengbiao
  *
  */
 public class WebUtils {
 
     public static final String DESKEY = "adf&**^%~@(k1";
-    public static String[] WHITELIST = { "app.walking.komect.com", "data.walking.komect.com", "oss.walking.komect.com", "walking.komect.com", "www.hiifit.com", "www.hiifit.net" };
+    public static String[] WHITELIST = { "app.walking.farm.com", "data.walking.farm.com", "oss.walking.farm.com", "walking.farm.com", "www.mituosi.com", "www.mituosi.net" };
 
 
     public static String getCurrentIP(HttpServletRequest request) {
