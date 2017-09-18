@@ -3,11 +3,9 @@ package com.changhf.utils;
 import java.util.*;
 
 /**
- * 集合工具类
- *
- * @author <a href="mailto:longlin.ll@alibaba-inc.com">根宝</a>
+ * @author <a href="mailto:wb-chf309549@alibaba-inc.com">常华锋</a>
  * @version V1.0.0
- * @since 2015-06-05
+ * @since 2017/09/15
  */
 public class CollectionUtil {
 

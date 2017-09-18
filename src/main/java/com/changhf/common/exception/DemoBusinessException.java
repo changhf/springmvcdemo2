@@ -1,11 +1,9 @@
 package com.changhf.common.exception;
 
 /**
- * DemoBusinessException
- *
- * @author <a href="mailto:longlin.ll@alibaba-inc.com">根宝</a>
+ * @author <a href="mailto:wb-chf309549@alibaba-inc.com">常华锋</a>
  * @version V1.0.0
- * @since 2017/3/11
+ * @since 2017/09/15
  */
 public class DemoBusinessException extends DemoRuntimeException {
 
