@@ -86,6 +86,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
                     //     WebUtil.returnJSON(response,
                     //             "{\"recode\":" + RecodeEnumUtils.NO_AUTHORITY.getCode() + ",\"msg\":\"" + RecodeEnumUtils.NO_AUTHORITY.getMsg() + "\"}",
                     //             "json");
+
                     //     return false;
                     // }
                     sessionCache.setSessionUser(sysUser);
