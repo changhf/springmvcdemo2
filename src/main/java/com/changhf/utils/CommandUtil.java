@@ -1,4 +1,4 @@
-package com.aliyun.yundun.apsarastack.oem.util;
+package com.changhf.utils;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.platform.win32.Kernel32;
