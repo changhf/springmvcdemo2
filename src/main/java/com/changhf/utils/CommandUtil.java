@@ -22,6 +22,15 @@ public class CommandUtil {
     private static final Logger LOG = LoggerFactory.getLogger(CommandUtil.class);
 
     /**
+     * 系统判断
+     *
+     * @return
+     */
+    public static boolean isWindows() {
+        return System.getProperty("os.name").startsWith("Windows");
+    }
+
+    /**
      * 执行命令行
      *
      * @param commandStr
@@ -30,8 +39,11 @@ public class CommandUtil {
      */
     public static Long executeShell(String commandStr) throws Exception {
         Long pid = null;
+        //        String[] commandArr = new String[]{"sh", "-c", commandStr};
         String[] commandArr = new String[]{"C:/cygwin64/bin/sh", "-c", commandStr};
-//        String[] commandArr = new String[]{"sh", "-c", commandStr};
+//        if (isWindows()) {
+//            commandArr = new String[]{"cmd.exe", "/C", commandStr};
+//        }
         Process process = Runtime.getRuntime().exec(commandArr);
         if (process != null) {
             //获取进程id
@@ -60,8 +72,13 @@ public class CommandUtil {
         BufferedReader bufferedReader = null;
         try {
             String commandStr = "ps --no-heading " + pid + " | wc -l";
-            String[] commandArr = new String[]{"sh", "-c", commandStr};
-//            String[] commandArr = new String[]{"C:/cygwin64/bin/sh", "-c", commandStr};
+//            String[] commandArr = new String[]{"sh", "-c", commandStr};
+            String[] commandArr = new String[]{"C:/cygwin64/bin/sh", "-c", commandStr};
+            if (isWindows()) {
+                commandStr = "tasklist|findstr " + pid;
+                commandArr = new String[]{"cmd.exe", "/C", commandStr};
+            }
+
             Process process = Runtime.getRuntime().exec(commandArr);
             if (process != null) {
                 //bufferedReader用于读取Shell的输出内容
@@ -115,6 +132,7 @@ public class CommandUtil {
 
     public static void main(String[] args) {
         try {
+//            Long pid = CommandUtil.executeShell("D:/BaiduYunDownload/WinRAR/WinRAR.exe a d:/abc.rar d:/test.zip");
             System.out.println(CommandUtil.executeShell("touch /home/changhf/image/abc.txt"));
         } catch (Exception e) {
             e.printStackTrace();
