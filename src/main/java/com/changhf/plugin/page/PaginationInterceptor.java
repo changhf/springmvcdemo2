@@ -1,35 +1,29 @@
 package com.changhf.plugin.page;
 
-import java.sql.Connection;
-import java.util.Map;
-import java.util.Properties;
-
-import org.apache.ibatis.executor.statement.RoutingStatementHandler;
-import org.apache.ibatis.executor.statement.StatementHandler;
-import org.apache.ibatis.mapping.BoundSql;
-import org.apache.ibatis.plugin.Interceptor;
-import org.apache.ibatis.plugin.Intercepts;
-import org.apache.ibatis.plugin.Invocation;
-import org.apache.ibatis.plugin.Plugin;
-import org.apache.ibatis.plugin.Signature;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.changhf.plugin.dialect.Dialect;
 import com.changhf.plugin.dialect.MySqlDialect;
 import com.changhf.plugin.dialect.OracleDialect;
 import com.changhf.plugin.dialect.SqlServerDialect;
 import com.changhf.utils.ReflectUtil;
+import org.apache.ibatis.executor.statement.RoutingStatementHandler;
+import org.apache.ibatis.executor.statement.StatementHandler;
+import org.apache.ibatis.mapping.BoundSql;
+import org.apache.ibatis.plugin.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.sql.Connection;
+import java.util.Map;
+import java.util.Properties;
 
 
 /**
-* @ClassName: PaginationInterceptor 
-* @Description:  
-  * 实现mybatis提供的拦截器接口，编写我们自己的分页实现，原理就是拦截底层JDBC操作相关的Statement对象，
-  * 把前端的分页参数如当前记录索引和每页大小通过拦截器注入到sql语句中，即在sql执行之前通过分页参数重新生成分页sql，
-  * 而具体的分页sql实现是分离到Dialect接口中去。
+ * @ClassName: PaginationInterceptor
+ * @Description: 实现mybatis提供的拦截器接口，编写我们自己的分页实现，原理就是拦截底层JDBC操作相关的Statement对象，
+ * 把前端的分页参数如当前记录索引和每页大小通过拦截器注入到sql语句中，即在sql执行之前通过分页参数重新生成分页sql，
+ * 而具体的分页sql实现是分离到Dialect接口中去。
  */
-@Intercepts({ @Signature(type = StatementHandler.class, method = "prepare", args = { Connection.class }) })
+@Intercepts({@Signature(type = StatementHandler.class, method = "prepare", args = {Connection.class})})
 public class PaginationInterceptor implements Interceptor {
     private Properties properties;
     private static final Logger logger = LoggerFactory.getLogger(PaginationInterceptor.class);
@@ -84,10 +78,12 @@ public class PaginationInterceptor implements Interceptor {
     /**
      * plugin
      */
+    @Override
     public Object plugin(Object target) {
         return Plugin.wrap(target, this);
     }
 
+    @Override
     public void setProperties(Properties properties) {
         this.properties = properties;
     }
@@ -100,6 +96,7 @@ public class PaginationInterceptor implements Interceptor {
      * <pre>
      *     是否需要分页
      * </pre>
+     *
      * @param obj
      * @return
      */
