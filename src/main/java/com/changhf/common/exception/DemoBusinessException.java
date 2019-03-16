@@ -1,7 +1,7 @@
 package com.changhf.common.exception;
 
 /**
- * @author <a href="mailto:wb-chf309549@alibaba-inc.com">常华锋</a>
+ * @author changhuafeng
  * @version V1.0.0
  * @since 2017/09/15
  */
