@@ -5,13 +5,15 @@ import java.lang.reflect.Field;
 
 /**
  * 利用反射进行操作的一个工具类
+ *
  * @version V1.0.0
  * @since 2017/09/14
  */
 public class ReflectUtil {
     /**
      * 利用反射获取指定对象的指定属性
-     * @param obj 目标对象
+     *
+     * @param obj       目标对象
      * @param fieldName 目标属性
      * @return 目标属性的值
      */
@@ -19,6 +21,7 @@ public class ReflectUtil {
         Object result = null;
         Field field = ReflectUtil.getField(obj, fieldName);
         if (field != null) {
+            //访问私有成员变量，需要设置为true
             field.setAccessible(true);
             try {
                 result = field.get(obj);
@@ -33,7 +36,8 @@ public class ReflectUtil {
 
     /**
      * 利用反射获取指定对象里面的指定属性
-     * @param obj 目标对象
+     *
+     * @param obj       目标对象
      * @param fieldName 目标属性
      * @return 目标字段
      */
@@ -52,9 +56,10 @@ public class ReflectUtil {
 
     /**
      * 利用反射设置指定对象的指定属性为指定的值
-     * @param obj 目标对象
-     * @param fieldName 目标属性
-      * @param fieldValue 目标值
+     *
+     * @param obj        目标对象
+     * @param fieldName  目标属性
+     * @param fieldValue 目标值
      */
     public static void setFieldValue(Object obj, String fieldName, String fieldValue) {
         Field field = ReflectUtil.getField(obj, fieldName);

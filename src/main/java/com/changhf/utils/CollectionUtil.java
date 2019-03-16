@@ -3,6 +3,8 @@ package com.changhf.utils;
 import java.util.*;
 
 /**
+ * 泛型方法+菱形用法
+ *
  * @author <a href="mailto:wb-chf309549@alibaba-inc.com">常华锋</a>
  * @version V1.0.0
  * @since 2017/09/15
@@ -41,7 +43,7 @@ public class CollectionUtil {
             return null;
         }
 
-        List<T> newList = new ArrayList<T>();
+        List<T> newList = new ArrayList<>();
         for (T t : list) {
             if (t != null) {
                 newList.add(t);
@@ -51,7 +53,7 @@ public class CollectionUtil {
     }
 
     /**
-     * 过滤空
+     * 过滤空(包括空字符串)
      *
      * @param list
      * @param <T>
@@ -62,13 +64,22 @@ public class CollectionUtil {
             return null;
         }
 
-        List<T> newList = new ArrayList<T>();
+        List<T> newList = new ArrayList<>();
         for (T t : list) {
             if (t != null && t.toString().length() > 0) {
                 newList.add(t);
             }
         }
         return newList;
+    }
+
+    public static void main(String[] args) {
+        List<String> list = filterEmpty(Arrays.asList("", "", ""));
+        System.out.println(list);
+        Set<String> set = CollectionUtil.asSet("li", "li", "wei");
+        for (String str : set) {
+            System.out.println(str);
+        }
     }
 
     /**
@@ -172,7 +183,7 @@ public class CollectionUtil {
     }
 
     /**
-     * 数组转List对象
+     * 数组转List对象，形参可变的参数相当于数组
      *
      * @param array
      * @param <T>
@@ -193,7 +204,7 @@ public class CollectionUtil {
     }
 
     /**
-     * 数组转List对象
+     * 数组转Set对象
      *
      * @param array
      * @param <T>
