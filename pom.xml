@@ -240,6 +240,12 @@
             <artifactId>aspectjrt</artifactId>
             <version>${aspectj.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.22</version>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
     <build>
         <finalName>springmvcdemo2</finalName>
