@@ -11,7 +11,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>4.2.2.RELEASE</spring.version>
+        <spring.version>4.3.20.RELEASE</spring.version>
         <aspectj.version>1.8.9</aspectj.version>
     </properties>
     <dependencies>
@@ -157,7 +157,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.4</version>
+            <version>1.2.56</version>
         </dependency>
         <dependency>
             <groupId>net.sf.json-lib</groupId>
@@ -183,7 +183,7 @@
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
-            <version>1.2.2</version>
+            <version>1.4</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -239,6 +239,12 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
             <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.22</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
     <build>

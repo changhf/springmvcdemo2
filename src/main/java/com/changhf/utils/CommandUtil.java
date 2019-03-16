@@ -14,7 +14,7 @@ import java.lang.reflect.Field;
 /**
  * CommandUtil
  *
- * @author <a href="mailto:longlin.ll@alibaba-inc.com">根宝</a>
+ * changhuafeng
  * @version V1.0.0
  * @since 2017/12/4
  */
